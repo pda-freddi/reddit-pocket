@@ -1,0 +1,79 @@
+.postContainer {
+  border: 1px solid #808080;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.postScoreContainer {
+  min-width: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #CCCCCC30;
+}
+
+.postScoreUpArrow {
+  margin: 10px 0 5px 0;
+  border-radius: 50px;
+  transition: transform 0.30s, box-shadow 0.30s;
+}
+
+.postScoreUpArrow:hover {
+  transform: translateY(-5px);
+  background-color: #3BCB5680;
+  box-shadow: 0 5px 0 #3BCB56;
+}
+
+.postScoreDownArrow {
+  margin-top: 5px;
+  border-radius: 50px;
+  transition: transform 0.30s, box-shadow 0.30s;
+}
+.postScoreDownArrow:hover {
+  transform: translateY(5px);
+  background-color: #ED001C80;
+  box-shadow: 0 -5px 0 #ED001C;
+}
+
+.postScore {
+  font-size: 14px;
+  font-weight: 500;
+  /* padding: 0 10px; */
+}
+
+.postContent {
+  width: 100%;
+}
+
+.postSection {
+  margin: 8px 0 8px 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: start;
+}
+
+.postTitle {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 500;
+  padding: 0 5px;
+}
+
+.postDetailsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 1px solid #808080;;
+}
+
+.postDetails {
+  font-size: 0.85rem;
+  margin: 10px 5px;
+}
+
+.postDetailsComments {
+  font-size: 0.85rem;
+  margin: 10px 5px;
+  font-weight: 700;
+}

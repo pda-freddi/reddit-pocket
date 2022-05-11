@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./SearchBar.module.css";
+import styles from "./Searchbar.module.css";
 
-const SearchBar = () => {
+const Searchbar = () => {
   const inputValue = "";
   const setValue = "";
   return (
@@ -16,4 +16,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default Searchbar;

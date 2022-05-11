@@ -1,0 +1,32 @@
+.sidebarContainer {
+  grid-row: 2;
+  grid-column-start: 2;
+  align-self: start;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+.title {
+  font-size: 1.4rem;
+  margin: 10px 0 0 0;
+  font-weight: 500;
+}
+
+.categoryContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  line-height: 1.8rem;
+}
+
+.categoryLink {
+  font-size: 1rem;
+  color: #222222;
+  text-decoration: none;
+  transition: color 0.50s;
+}
+
+.categoryLink:hover {
+  color: red;
+}
