@@ -25,6 +25,13 @@
   animation: logo-float infinite 0.75s linear;
 }
 
+.homeLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
 .appName {
   font-family: Quicksand, sans-serif;
   font-size: 1.5rem;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 
 const Sidebar = () => {
@@ -6,10 +7,10 @@ const Sidebar = () => {
     <aside className={styles.sidebarContainer}>
       <h2 className={styles.title}>Popular Subreddits</h2>
       <div className={styles.categoryContainer}>
-        <a href="/" className={styles.categoryLink}>r/games</a>
-        <a href="/" className={styles.categoryLink}>r/music</a>
-        <a href="/" className={styles.categoryLink}>r/football</a>
-        <a href="/" className={styles.categoryLink}>r/politics</a>
+        <Link to="r/games" className={styles.categoryLink}>r/games</Link>
+        <Link to="r/music" className={styles.categoryLink}>r/music</Link>
+        <Link to="r/football" className={styles.categoryLink}>r/football</Link>
+        <Link to="r/politics" className={styles.categoryLink}>r/politics</Link>
       </div>
     </aside>
   );
