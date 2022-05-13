@@ -1,7 +1,7 @@
 import React from "react";
 import Hotbar from "../../features/hotbar/Hotbar.js";
 import Sidebar from "../sidebar/Sidebar.js";
-import Posts from "../posts/Posts.js";
+import Posts from "../../features/posts/Posts.js";
 import styles from "./Main.module.css";
 
 const Main = () => {

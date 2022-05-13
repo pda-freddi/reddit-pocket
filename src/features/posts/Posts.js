@@ -1,5 +1,5 @@
 import React from "react";
-import Post from "../../features/post/Post.js";
+import Post from "../post/Post.js";
 import styles from "./Posts.module.css";
 
 const Posts = () => {
