@@ -70,7 +70,7 @@ This fetch must be triggered by a click on some link, like on the sidebar
 or the hotbar. This can be translated to an action being dispatched to trigger
 the fetching, which must be handled by an async thunk.
 
-So how will the URL be updated and how will this updated trigger the fetch
+So how will the URL be updated and how will this update trigger the fetch
 action?
 
 Ideas:
@@ -97,22 +97,6 @@ will fetch the comments for the post and display in the same page.
 view of the unique post with comments listed below the post. (I like this idea
 better because comments list can be very extensive)
 
-In short:
-
-1. Need logic to construct and update URLs: Redux, Router or both?
-
-So after further analysis I believe the implementation should start with
-React Router because it's the appropriate choice to construct and update URLs
-and links in the application. This provides navigability and a history stack
-for the user, otherwise the page would only update the content without any
-changes to the URL and no ability to navigate between pages using the browser's
-back and forward buttons.
-
-Posts must updated when URL changes: Redux async thunk?
-
-Maybe we could use the React Router's useParams() hook on the Posts components
-to check the current URL and dispatch the fetch actions based on this.
-
 CATEGORY FETCHING - SIDEBAR COMPONENT
 
 We'll display links to popular subreddits on the sidebar. These subreddits will
@@ -129,8 +113,6 @@ subredditArray[0].data["icon_img"] // https://b.thumbs.redditmedia.com/EndDxMGB-
 subredditArray[0].data["display_name"] // "Home"
 subredditArray[0].data.id // "2qs0k" --> Use it as key property for React components
 subredditArray[0].data.url // "/r/Home/"
-
-
 
 
 */
