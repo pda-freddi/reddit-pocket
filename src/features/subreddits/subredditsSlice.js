@@ -31,8 +31,8 @@ const subredditsSlice = createSlice({
     .addCase(getSubreddits.fulfilled, (state, action) => {
       state.isLoading = false;
       state.fetchFailed = false;
-      let subredditsStateArray = state.subreddits;
       let subredditsResponseArray = action.payload.data.children;
+      let subreddits = [];
       subredditsResponseArray.forEach(element => {
         let subreddit = {
           name: element.data["display_name"],
@@ -40,8 +40,9 @@ const subredditsSlice = createSlice({
           id: element.data.id,
           url: element.data.url
         };
-        subredditsStateArray.push(subreddit);
+        subreddits.push(subreddit);
       });
+      state.subreddits = [...subreddits];
     })
   }
 });
