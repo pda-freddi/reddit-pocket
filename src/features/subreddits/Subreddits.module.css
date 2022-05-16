@@ -1,0 +1,32 @@
+.subredditsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  line-height: 1.8rem;
+}
+
+.subreddit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.subredditIcon {
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+  border-radius: 100%;
+  vertical-align: baseline;
+}
+
+.subredditLink {
+  font-size: 1rem;
+  color: #222222;
+  text-decoration: none;
+  transition: color 0.50s;
+}
+
+.subredditLink:hover {
+  color: red;
+}

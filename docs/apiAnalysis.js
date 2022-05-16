@@ -113,5 +113,25 @@ Posts must updated when URL changes: Redux async thunk?
 Maybe we could use the React Router's useParams() hook on the Posts components
 to check the current URL and dispatch the fetch actions based on this.
 
+CATEGORY FETCHING - SIDEBAR COMPONENT
+
+We'll display links to popular subreddits on the sidebar. These subreddits will
+be programatically fetched and listed in the component.
+
+fetch URL: "https://www.reddit.com/subreddits.json"
+response.json() returns an array of 25 objects containing the subreddits info:
+
+Ex:
+
+const subredditArray = response.data.children;
+
+subredditArray[0].data["icon_img"] // https://b.thumbs.redditmedia.com/EndDxMGB-FTZ2MGtjepQ06cQEkZw_YQAsOUudpb9nSQ.png
+subredditArray[0].data["display_name"] // "Home"
+subredditArray[0].data.id // "2qs0k" --> Use it as key property for React components
+subredditArray[0].data.url // "/r/Home/"
+
+
+
+
 */
 
