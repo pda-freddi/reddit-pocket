@@ -18,7 +18,7 @@ function buildLinkPath(pathname, section) {
         return `${pathname.replace("rising", "hot")}`;
       if (pathEndsWithNew)
         return `${pathname.replace("new", "hot")}`;
-      return `${pathname}/hot`;
+      return `${pathname}hot`;
 
     case "top":
       if (pathEndsWithTop)
@@ -29,7 +29,7 @@ function buildLinkPath(pathname, section) {
         return `${pathname.replace("rising", "top")}`;
       if (pathEndsWithNew)
         return `${pathname.replace("new", "top")}`;
-      return `${pathname}/top`;
+      return `${pathname}top`;
 
 
     case "rising":
@@ -41,7 +41,7 @@ function buildLinkPath(pathname, section) {
         return `${pathname.replace("top", "rising")}`;
       if (pathEndsWithNew)
         return `${pathname.replace("new", "rising")}`;
-      return `${pathname}/rising`;
+      return `${pathname}rising`;
 
     case "new":
       if (pathEndsWithNew)
@@ -52,7 +52,7 @@ function buildLinkPath(pathname, section) {
         return `${pathname.replace("top", "new")}`;
       if (pathEndsWithRising)
         return `${pathname.replace("rising", "new")}`;
-      return `${pathname}/new`;
+      return `${pathname}new`;
   }
 }
 
