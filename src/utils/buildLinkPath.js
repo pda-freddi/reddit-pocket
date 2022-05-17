@@ -1,5 +1,7 @@
-/* eslint-disable default-case */
-function buildLinkPath(pathname, section) {
+/* Returns appropriate paths for Link elements in Hotbar component 
+for different sections (hot, new, etc.) and subreddits */
+
+export function buildLinkPath(pathname, section) {
   if (pathname === "/")
     return `/${section}`;
 
@@ -53,7 +55,8 @@ function buildLinkPath(pathname, section) {
       if (pathEndsWithRising)
         return `${pathname.replace("rising", "new")}`;
       return `${pathname}new`;
+
+    default:
+      return console.error("Unexpected section argument");
   }
 }
-
-export { buildLinkPath };
