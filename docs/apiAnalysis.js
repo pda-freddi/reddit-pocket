@@ -1,10 +1,11 @@
+/* This file is a documentation of the analysis process of Reddit's JSON API and layout of ideas for how
+the application's state and features should be designed  */
 
-
+// Conceptual model of how post objects will be stored in state
 const state = {
-  currentUrl: "https://reddit.com/lelele",
   posts: [{
     author: "author",
-    url: "https://reddit.com/lalala",
+    url: "https://reddit.com/linkto123...",
     text: "text",
     subreddit: "r/lalala",
     title: "title",
@@ -22,7 +23,8 @@ const state = {
 }
 
 /*  
-const posts = response.data.children --> returns an array of posts
+API Analysis
+fetch(...).then(json()).then(response) --> response.data.children --> returns an array of posts
 
 Each post is an object with a data property that returns another object
 with many properties about the post
@@ -47,13 +49,12 @@ Relevant properties:
 .media.reddit_video --> has .dash_url and fallback_url relevant properties
 .preview --> object containing preview of media
 .thumbnail --> String containing a link to thumbnail; ex: https://b.thumbs.redditmedia.com/nQ-min_l6f62lxK5mYihBmpfXuofUL9FzX9zw1RZQNI.jpg
-.post_hint --> undefined if only text; image; link; video (rich or hosted)
-
+.post_hint --> undefined if only text; can also be image, link, and video (rich or hosted)
 
 How state should work?
 
 The Posts component needs to access an array of posts, regardless of details
-about subreddit, search, etc. It will map the array in individual Post components,
+about subreddit, search, etc. It will map the array to individual Post components,
 passing appropriate info as props for Post to render.
 
 So in state we will have the array of posts and Posts component will be subscribed
@@ -113,7 +114,6 @@ subredditArray[0].data["icon_img"] // https://b.thumbs.redditmedia.com/EndDxMGB-
 subredditArray[0].data["display_name"] // "Home"
 subredditArray[0].data.id // "2qs0k" --> Use it as key property for React components
 subredditArray[0].data.url // "/r/Home/"
-
 
 */
 
