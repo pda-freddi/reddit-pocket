@@ -17,7 +17,21 @@ const Posts = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
-  /* TODO: TREAT LOADING AND ERROR STATES  */
+  if (isLoading) {
+    return (
+      <section className={styles.postsContainer}>
+        <p>Loading...</p>
+      </section>
+    );
+  }
+
+  if (fetchFailed || postsArray.length === 0) {
+    return (
+      <section className={styles.postsContainer}>
+        <p>Nothing to display here! Please try again</p>
+      </section>
+    );
+  }
 
   return (
     <section className={styles.postsContainer}>

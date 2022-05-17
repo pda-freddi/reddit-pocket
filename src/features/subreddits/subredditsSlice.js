@@ -31,12 +31,16 @@ const subredditsSlice = createSlice({
     .addCase(getSubreddits.fulfilled, (state, action) => {
       state.isLoading = false;
       state.fetchFailed = false;
+      if (action.payload.error) {
+        state.fetchFailed = true;
+        return;
+      }
       let subredditsResponseArray = action.payload.data.children;
       let subreddits = [];
       subredditsResponseArray.forEach(element => {
         let subreddit = {
-          name: element.data["display_name"],
-          icon: element.data["icon_img"],
+          name: element.data.display_name,
+          icon: element.data.icon_img,
           id: element.data.id,
           url: element.data.url
         };

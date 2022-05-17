@@ -30,7 +30,10 @@ const postsSlice = createSlice({
     })
     .addCase(getPosts.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.fetchFailed = false;
+      if (action.payload.error) {
+        state.fetchFailed = true;
+        return;
+      }
       let postsResponseArray = action.payload.data.children;
       let posts = [];
       postsResponseArray.forEach(element => {
