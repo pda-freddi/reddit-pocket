@@ -7,7 +7,7 @@
 }
 
 .postScoreContainer {
-  min-width: 40px;
+  width: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,9 +38,8 @@
 }
 
 .postScore {
-  font-size: 14px;
-  font-weight: 500;
-  /* padding: 0 10px; */
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .postContent {
@@ -55,16 +54,50 @@
 }
 
 .postTitle {
-  font-size: 1.2rem;
-  margin: 0;
+  text-align: left;
+  font-size: 1.125rem;
+  margin: 0 8px 8px 8px;
   font-weight: 500;
-  padding: 0 5px;
+}
+
+.postText {
+  text-align: left;
+  font-size: 1rem;
+  margin: 0 8px;
+}
+
+.postImage {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0 10px 8px 10px;
+}
+
+.postVideo {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0 10px 8px 10px;
+}
+
+.postExternalLinkContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 10px 8px 10px;
+}
+
+.postExternalUrl {
+  color: black;
+  text-decoration: underline;
+}
+
+.postThumbnail {
+  margin-left: 8px;
 }
 
 .postDetailsContainer {
   display: flex;
   justify-content: space-evenly;
-  border-top: 1px solid #808080;;
+  border-top: 1px solid #808080;
 }
 
 .postDetails {
@@ -76,4 +109,11 @@
   font-size: 0.85rem;
   margin: 10px 5px;
   font-weight: 700;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.50s;
+}
+
+.postDetailsComments:hover {
+  color: red;
 }

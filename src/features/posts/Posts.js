@@ -23,7 +23,7 @@ const Posts = () => {
     <section className={styles.postsContainer}>
     {
       postsArray.map(post => {
-        return <Post post={post} />
+        return <Post post={post} key={post.id} />
       })
     }
     </section>

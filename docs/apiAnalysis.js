@@ -47,7 +47,7 @@ Relevant properties:
 .media.reddit_video --> has .dash_url and fallback_url relevant properties
 .preview --> object containing preview of media
 .thumbnail --> String containing a link to thumbnail; ex: https://b.thumbs.redditmedia.com/nQ-min_l6f62lxK5mYihBmpfXuofUL9FzX9zw1RZQNI.jpg
-
+.post_hint --> undefined if only text; image; link; video (rich or hosted)
 
 
 How state should work?
