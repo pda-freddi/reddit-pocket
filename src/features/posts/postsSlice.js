@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const getPosts = createAsyncThunk(
+const getPosts = createAsyncThunk(
   "posts/getPosts",
   async (pathname) => {
     const response = await fetch(`https://www.reddit.com${pathname}.json`);
@@ -34,38 +34,41 @@ const postsSlice = createSlice({
         state.fetchFailed = true;
         return;
       }
-      let postsResponseArray = action.payload.data.children;
+      // Get posts array from response, extract relevant properties from each post 
+      // to a new object and store in state
       let posts = [];
-      postsResponseArray.forEach(element => {
-        let post = {
-          title: element.data.title,
-          author: element.data.author,
-          subreddit: element.data.subreddit_name_prefixed,
-          created: element.data.created,
-          link: element.data.permalink,
-          text: element.data.selftext,
-          score: element.data.score,
-          id: element.data.id,
-          isVideo: element.data.is_video,
-          media: element.data.media?.reddit_video,
-          numOfComments: element.data.num_comments,
-          postHint: element.data.post_hint,
+      let postsResponseArray = action.payload.data.children;
+      postsResponseArray.forEach(post => {
+        let newPost = {
+          author: post.data.author,
+          created: post.data.created,
+          id: post.data.id,
+          isVideo: post.data.is_video,
+          link: post.data.permalink,
+          media: post.data.media?.reddit_video,
+          numOfComments: post.data.num_comments,
+          postHint: post.data.post_hint,
+          score: post.data.score,
+          subreddit: post.data.subreddit_name_prefixed,
+          text: post.data.selftext,
+          title: post.data.title,
           thumbnail: {
-            url: element.data.thumbnail,
-            height: element.data.thumbnail_height,
-            width: element.data.thumbnail_width
+            url: post.data.thumbnail,
+            height: post.data.thumbnail_height,
+            width: post.data.thumbnail_width
           },
-          url: element.data.url
+          url: post.data.url
         };
-        posts.push(post);
+        posts.push(newPost);
       });
       state.posts = [...posts];
     })
   }
 });
 
-export const selectPosts = (state) => state.posts.posts;
+export { getPosts };
 export const selectIsLoading = (state) => state.posts.isLoading;
 export const selectFetchFailed = (state) => state.posts.fetchFailed;
+export const selectPosts = (state) => state.posts.posts;
 
 export default postsSlice.reducer;
