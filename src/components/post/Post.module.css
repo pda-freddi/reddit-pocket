@@ -120,11 +120,19 @@
   margin: 0;
   font-weight: 700;
   color: #000000;
+}
+
+.postDetailsCommentsLink {
+  font-size: 0.85rem;
+  padding: 10px 5px;
+  margin: 0;
+  font-weight: 700;
+  color: #000000;
   text-decoration: none;
   transition: background-color 0.15s ease-in-out;
   border-radius: 5px;
 }
 
-.postDetailsComments:hover {
+.postDetailsCommentsLink:hover {
   background-color: #26262710;
 }

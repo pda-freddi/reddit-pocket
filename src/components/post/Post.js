@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { getFormattedPostDate,
          getFormattedPostScore,
          getFormattedNumOfComments } from "../../utils/getFormattedPostDetails";
@@ -9,6 +10,10 @@ import { getPostMediaJSX } from "../../utils/getPostMediaJSX";
 import styles from "./Post.module.css";
 
 const Post = ({ post }) => {
+
+  // Check if current location is comments page to render appropriate links
+  const { pathname } = useLocation();
+  const isCommentsPage = pathname.includes("comments");
 
   // Get formatted post details
   const postScore = getFormattedPostScore(post.score);
@@ -32,7 +37,14 @@ const Post = ({ post }) => {
         <div className={styles.postDetailsContainer}>
           <p className={styles.postDetails}>Author: {post.author}</p>
           <p className={styles.postDetails}>Sent {postDate}</p>
-          <Link to={post.link} className={styles.postDetailsComments}>Comments ({numOfComments})</Link>
+          {
+            isCommentsPage ? 
+            <p className={styles.postDetailsComments}>Comments ({numOfComments})</p>
+            :
+            <Link to={post.link} className={styles.postDetailsCommentsLink}>
+              Comments ({numOfComments})
+            </Link>
+          }
         </div>
       </div>
     </article>
