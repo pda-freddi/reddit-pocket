@@ -16,9 +16,9 @@
   font-size: 1.1rem;
   color: black;
   text-decoration: none;
-  transition: color 0.50s;
+  transition: font-weight 0.15s ease-in-out;
 }
 
 .link:hover {
-  color: red;
+  font-weight: 700;
 }

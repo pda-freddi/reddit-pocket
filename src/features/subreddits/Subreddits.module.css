@@ -24,9 +24,9 @@
   font-size: 1rem;
   color: #222222;
   text-decoration: none;
-  transition: color 0.50s;
+  transition: font-weight 0.15s ease-in-out;
 }
 
 .subredditLink:hover {
-  color: red;
+  font-weight: 700;
 }

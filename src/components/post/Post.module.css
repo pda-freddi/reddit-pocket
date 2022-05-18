@@ -17,7 +17,7 @@
 .postScoreUpArrow {
   margin: 10px 0 5px 0;
   border-radius: 50px;
-  transition: transform 0.30s, box-shadow 0.30s;
+  transition: transform 0.30s, box-shadow 0.30s, background-color 0.40s;
 }
 
 .postScoreUpArrow:hover {
@@ -29,7 +29,7 @@
 .postScoreDownArrow {
   margin-top: 5px;
   border-radius: 50px;
-  transition: transform 0.30s, box-shadow 0.30s;
+  transition: transform 0.30s, box-shadow 0.30s, background-color 0.40s;
 }
 .postScoreDownArrow:hover {
   transform: translateY(5px);
@@ -90,6 +90,14 @@
   text-decoration: underline;
 }
 
+.postExternalUrl:hover {
+  color: #07599C;
+}
+
+.postExternalUrl:active {
+  color: #D83148;
+}
+
 .postThumbnail {
   margin-left: 8px;
 }
@@ -102,18 +110,21 @@
 
 .postDetails {
   font-size: 0.85rem;
-  margin: 10px 5px;
+  padding: 10px 5px;
+  margin: 0;
 }
 
 .postDetailsComments {
   font-size: 0.85rem;
-  margin: 10px 5px;
+  padding: 10px 5px;
+  margin: 0;
   font-weight: 700;
   color: #000000;
   text-decoration: none;
-  transition: color 0.50s;
+  transition: background-color 0.15s ease-in-out;
+  border-radius: 5px;
 }
 
 .postDetailsComments:hover {
-  color: red;
+  background-color: #26262710;
 }
