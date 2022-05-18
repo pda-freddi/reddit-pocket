@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const getSubreddits = createAsyncThunk(
+const getSubreddits = createAsyncThunk(
   "subreddits/getSubreddits",
   async () => {
     const response = await fetch("https://www.reddit.com/subreddits.json");
@@ -35,24 +35,27 @@ const subredditsSlice = createSlice({
         state.fetchFailed = true;
         return;
       }
+      // Get subreddits array from response, extract relevant properties to 
+      // a new subreddit object and store in state
       let subredditsResponseArray = action.payload.data.children;
       let subreddits = [];
-      subredditsResponseArray.forEach(element => {
-        let subreddit = {
-          name: element.data.display_name,
-          icon: element.data.icon_img,
-          id: element.data.id,
-          url: element.data.url
+      subredditsResponseArray.forEach(subreddit => {
+        let newSubreddit = {
+          icon: subreddit.data.icon_img,
+          id: subreddit.data.id,
+          name: subreddit.data.display_name,
+          url: subreddit.data.url
         };
-        subreddits.push(subreddit);
+        subreddits.push(newSubreddit);
       });
       state.subreddits = [...subreddits];
     })
   }
 });
 
-export const selectSubreddits = (state) => state.subreddits.subreddits;
+export { getSubreddits };
 export const selectIsLoading = (state) => state.subreddits.isLoading;
 export const selectFetchFailed = (state) => state.subreddits.fetchFailed;
+export const selectSubreddits = (state) => state.subreddits.subreddits;
 
 export default subredditsSlice.reducer;
