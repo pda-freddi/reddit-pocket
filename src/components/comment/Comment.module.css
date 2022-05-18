@@ -1,0 +1,68 @@
+.commentContainer {
+  padding: 10px;
+}
+
+.commentDetailsContainer {
+  display: flex;
+  font-size: 0.85rem;
+}
+
+.commentDetailsAuthor {
+  font-weight: 700;
+  margin: 0;
+  padding-right: 5px;
+}
+
+.commentDetailsCreated {
+  margin: 0;
+  padding-right: 5px;
+}
+
+.commentDetailsEdited {
+  margin: 0;
+  font-style: italic;
+}
+
+.commentText {
+  font-size: 1rem;
+  text-align: left;
+  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.commentScoreContainer {
+  display: flex;
+}
+
+.commentScoreUpArrow {
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  transition: transform 0.30s, box-shadow 0.30s, background-color 0.40s;
+}
+
+.commentScoreUpArrow:hover {
+  transform: translateY(-5px);
+  background-color: #3BCB5680;
+  box-shadow: 0 5px 0 #3BCB56;
+}
+
+.commentScoreDownArrow {
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  transition: transform 0.30s, box-shadow 0.30s, background-color 0.40s;
+
+}
+.commentScoreDownArrow:hover {
+  transform: translateY(5px);
+  background-color: #ED001C80;
+  box-shadow: 0 -5px 0 #ED001C;
+}
+
+.commentScore {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0 5px;
+}

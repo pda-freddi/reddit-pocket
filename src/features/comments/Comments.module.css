@@ -1,3 +1,57 @@
+.backButton {
+  align-self: end;
+  justify-self: start;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #FFFFFF;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 40px;
+}
+
+.backButton:hover {
+  background-color: #F6F7F8;
+  cursor: pointer;
+}
+
+.backButton:active {
+  background-color: #FFFFFF;
+}
+
 .contentContainer {
   grid-row-start: 2;
+}
+
+.commentsContainer {
+  background-color: #FFFFFF;
+  border: 1px solid #808080;
+  border-radius: 5px;
+}
+
+.commentsHeading {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: left;
+  margin: 10px 0 0 10px;
+}
+
+.linkToReddit {
+  display: block;
+  font-size: 0.875rem;
+  margin: 0 0 10px 0;
+  color: #000000;
+  text-decoration: none;
+  transition: font-weight 0.15s ease-in-out;
+}
+
+.linkToReddit:hover {
+  font-weight: 700;
+}
+
+.linkToReddit:active {
+  color: #D83148;
 }
