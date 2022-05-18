@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getPosts = createAsyncThunk(
   "posts/getPosts",
-  async (pathname, thunkAPI) => {
+  async (pathname) => {
     const response = await fetch(`https://www.reddit.com${pathname}.json`);
     const jsonResponse = await response.json();
     return jsonResponse;
