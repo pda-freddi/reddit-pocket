@@ -14,8 +14,7 @@ const Posts = () => {
 
   useEffect(() => {
     dispatch(getPosts(pathname))
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname]);
+  }, [pathname, dispatch]);
 
   if (isLoading) {
     return (

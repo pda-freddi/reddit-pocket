@@ -12,8 +12,7 @@ const Subreddits = () => {
 
   useEffect(() => {
     dispatch(getSubreddits());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   if (isLoading) return <p>Loading...</p>;
 
