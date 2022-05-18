@@ -115,5 +115,27 @@ subredditArray[0].data["display_name"] // "Home"
 subredditArray[0].data.id // "2qs0k" --> Use it as key property for React components
 subredditArray[0].data.url // "/r/Home/"
 
+COMMENTS FETCHING - COMMENTS COMPONENT
+
+fetch URL type: "https://www.reddit.com/r/:subreddit/comments/:postid/:anotherid/.json"
+
+response.json() returns an array containing two objects:
+  1. First object contains information about the post
+  2. Second object contains an array of comments in the children property
+
+Each comment is an object. The following properties will be used to display comment information in UI.
+
+NOTE: Before adding the object to comment's state array, must check if object.kind === "t1". There's the
+object.kind === "more" that contains info about more comments.
+
+.author --> String containing author's name
+.body --> Markdown content with the text of the comment
+.created --> Creation date in epoch seconds
+.edited --> Date of last edition in epoch seconds
+.id --> Id of comment
+.permalink --> Link to comment
+.replies --> Object containing an array of replies to this comment
+.score --> Score of comment
+
 */
 
