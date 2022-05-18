@@ -2,8 +2,8 @@ import React from "react";
 import { getFormattedPostDate,
          getFormattedPostScore,
          getFormattedNumOfComments } from "../../utils/getFormattedPostDetails";
-import UpArrowIcon from "../../icons/up-arrow.png";
-import DownArrowIcon from "../../icons/down-arrow.png";
+import upArrowIcon from "../../icons/up-arrow.png";
+import downArrowIcon from "../../icons/down-arrow.png";
 import { Link } from "react-router-dom";
 import { getPostMediaJSX } from "../../utils/getPostMediaJSX";
 import styles from "./Post.module.css";
@@ -21,9 +21,9 @@ const Post = ({ post }) => {
   return (
     <article className={styles.postContainer}>
       <div className={styles.postScoreContainer}>
-        <img src={UpArrowIcon} alt="up arrow" className={styles.postScoreUpArrow} />
+        <img src={upArrowIcon} alt="up arrow" className={styles.postScoreUpArrow} />
         <span className={styles.postScore}>{postScore}</span>
-        <img src={DownArrowIcon} alt="down arrow" className={styles.postScoreDownArrow} />
+        <img src={downArrowIcon} alt="down arrow" className={styles.postScoreDownArrow} />
       </div>
       <div className={styles.postContent}>
         <p className={styles.postSection}>{post.subreddit}</p>
