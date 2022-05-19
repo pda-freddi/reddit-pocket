@@ -1,8 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { getFormattedPostDate,
-         getFormattedPostScore,
-         getFormattedNumOfComments } from "../../utils/getFormattedPostDetails";
+import { getFormattedDate,
+         getFormattedScore,
+         getFormattedNumOfComments } from "../../utils/getFormattedDetails";
 import upArrowIcon from "../../icons/up-arrow.png";
 import downArrowIcon from "../../icons/down-arrow.png";
 import { Link } from "react-router-dom";
@@ -16,8 +16,8 @@ const Post = ({ post }) => {
   const isCommentsPage = pathname.includes("comments");
 
   // Get formatted post details
-  const postScore = getFormattedPostScore(post.score);
-  const postDate = getFormattedPostDate(post.created);
+  const postScore = getFormattedScore(post.score);
+  const postDate = getFormattedDate(post.created);
   const numOfComments = getFormattedNumOfComments(post.numOfComments);
 
   // Get post media as JSX
