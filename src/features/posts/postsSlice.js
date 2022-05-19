@@ -39,6 +39,7 @@ const postsSlice = createSlice({
       let posts = [];
       let postsResponseArray = action.payload.data.children;
       postsResponseArray.forEach(post => {
+        if (post.kind !== "t3") return;
         let newPost = {
           author: post.data.author,
           created: post.data.created,

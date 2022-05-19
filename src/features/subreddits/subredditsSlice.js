@@ -40,6 +40,7 @@ const subredditsSlice = createSlice({
       let subredditsResponseArray = action.payload.data.children;
       let subreddits = [];
       subredditsResponseArray.forEach(subreddit => {
+        if (subreddit.kind !== "t5") return;
         let newSubreddit = {
           icon: subreddit.data.icon_img,
           id: subreddit.data.id,
