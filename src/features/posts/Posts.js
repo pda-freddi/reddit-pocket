@@ -34,11 +34,18 @@ const Posts = () => {
 
   return (
     <section className={styles.postsContainer}>
-    {
-      postsArray.map(post => {
-        return <Post post={post} key={post.id} />
-      })
-    }
+      {
+        postsArray.map(post => {
+          return <Post post={post} key={post.id} />
+        })
+      }
+      <a 
+      href={`https://www.reddit.com${pathname}`} 
+      className={styles.linkToReddit}
+      target="_blank" 
+      rel="noreferrer">
+        View more comments on Reddit.com
+      </a>
     </section>
   );
 };

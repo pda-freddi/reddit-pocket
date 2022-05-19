@@ -1,5 +1,9 @@
 .commentContainer {
   padding: 10px;
+  margin-bottom: 5px;
+  background-color: #FFFFFF;
+  border: 1px solid #808080;
+  border-radius: 5px;
 }
 
 .commentDetailsContainer {

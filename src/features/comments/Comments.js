@@ -76,7 +76,7 @@ const Comments = () => {
           className={styles.linkToReddit}
           target="_blank" 
           rel="noreferrer">
-            View more comments on Reddit's official website
+            View more comments on Reddit.com
           </a>
         </section>
       </section>
