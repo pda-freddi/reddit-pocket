@@ -64,6 +64,7 @@ const commentsSlice = createSlice({
       const commentsResponseArray = action.payload[1].data.children;
       commentsResponseArray.forEach(comment => {
         if (comment.kind !== "t1") return;
+        if (comment.data.author === "[deleted]" || comment.data.body === "[deleted]") return;
         let newComment = {
           author: comment.data.author,
           body: comment.data.body,

@@ -39,7 +39,7 @@ const Post = ({ post }) => {
           <p className={styles.postDetails}>Sent {postDate}</p>
           {
             isCommentsPage ? 
-            <p className={styles.postDetailsComments}>Comments ({numOfComments})</p>
+            <p className={styles.postDetailsComments}>Comments</p>
             :
             <Link to={post.link} className={styles.postDetailsCommentsLink}>
               Comments ({numOfComments})

@@ -61,9 +61,17 @@
 }
 
 .postText {
+  font-size: 0.875rem;
+  display: block;
   text-align: left;
-  font-size: 1rem;
-  margin: 0 8px;
+  margin: 0;
+  padding: 0px 8px 8px 8px;
+}
+
+.postText * {
+  max-width: 100%;
+  text-align: left;
+  margin: 5px 0;
 }
 
 .postImage {

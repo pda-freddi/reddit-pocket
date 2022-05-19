@@ -7,6 +7,7 @@ import { getComments,
          selectPost,
          selectComments
                         } from "./commentsSlice.js";
+import { getFormattedNumOfComments } from "../../utils/getFormattedDetails.js";
 import leftArrowIcon from "../../icons/left-arrow.png"
 import Post from "../../components/post/Post.js";
 import Comment from "../../components/comment/Comment.js";
@@ -21,6 +22,8 @@ const Comments = () => {
   const post = useSelector(selectPost);
   const isLoading = useSelector(selectIsLoading);
   const fetchFailed = useSelector(selectFetchFailed);
+
+  const numOfComments = getFormattedNumOfComments(post.numOfComments);
 
   useEffect(() => {
     dispatch(getComments(pathname));
@@ -62,10 +65,7 @@ const Comments = () => {
       <section className={styles.contentContainer}>
         <Post post={post} />
         <section className={styles.commentsContainer}>
-          <h2 className={styles.commentsHeading}>Comments</h2>
-          <Comment />
-          <Comment />
-          <Comment />
+          <h2 className={styles.commentsHeading}>Comments ({numOfComments})</h2>
           {
             commentsArray.map(comment => {
               return <Comment comment={comment} key={comment.id} />;
