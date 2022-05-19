@@ -22,6 +22,57 @@
   background-color: #FFFFFF;
 }
 
+.loadingContainer {
+  grid-row-start: 2;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.emptyMessageContainer {
+  grid-row-start: 2;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.emptyMessage {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+.errorMessageContainer {
+  grid-row-start: 2;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.errorMessage {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
 .contentContainer {
   grid-row-start: 2;
 }

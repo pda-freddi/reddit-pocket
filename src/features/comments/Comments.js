@@ -8,6 +8,9 @@ import { getComments,
          selectComments
                         } from "./commentsSlice.js";
 import { getFormattedNumOfComments } from "../../utils/getFormattedDetails.js";
+import loadingIcon from "../../icons/loading.gif";
+import emptyIcon from "../../icons/empty.png";
+import errorIcon from "../../icons/error.png";
 import leftArrowIcon from "../../icons/left-arrow.png"
 import Post from "../../components/post/Post.js";
 import Comment from "../../components/comment/Comment.js";
@@ -29,32 +32,40 @@ const Comments = () => {
     dispatch(getComments(pathname));
   }, [dispatch, pathname]);
 
-  if (isLoading) {
-    return (
+  if (isLoading) return (
       <>
         <button className={styles.backButton} onClick={() => navigate(-1)}>
           <img src={leftArrowIcon} alt="left arrow" />Back
         </button>
-
-        <section className={styles.contentContainer}>
-          <p>Loading...</p>
-        </section>
+        <div className={styles.loadingContainer}>
+          <img src={loadingIcon} alt="loading icon" className={styles.loadingIcon} />
+        </div>
       </>
     );
-  }
 
-  if (fetchFailed || commentsArray.length === 0) {
-    return (
+  if (fetchFailed) return (
       <>
         <button className={styles.backButton} onClick={() => navigate(-1)}>
           <img src={leftArrowIcon} alt="left arrow" />Back
         </button>
-        <section className={styles.contentContainer}>
-          <p>No comments to show!</p>
-        </section>
+        <div className={styles.errorMessageContainer}>
+          <img src={errorIcon} alt="error icon" className={styles.errorIcon} />
+          <p className={styles.errorMessage}>Something went wrong, please try again...</p>
+        </div>
       </>
     );
-  }
+
+  if (commentsArray.length === 0) return (
+      <>
+        <button className={styles.backButton} onClick={() => navigate(-1)}>
+          <img src={leftArrowIcon} alt="left arrow" />Back
+        </button>
+        <div className={styles.emptyMessageContainer}>
+          <img src={emptyIcon} alt="empty icon" className={styles.emptyIcon} />
+          <p className={styles.emptyMessage}>No comments to show here</p>
+        </div>
+      </>
+    );
 
   return (
     <>
