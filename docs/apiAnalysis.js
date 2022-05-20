@@ -139,24 +139,14 @@ object.kind === "more" that contains info about more comments.
 
 SEARCHBAR FEATURE - Implementation Idea
 
-Posts component
-
-Select search term stored in state and check if it's empty.
-If it's empty, compose a url to fetch using only pathname.
-If it's not empty, compose a url to fetch using pathname and search term
-as a query parameter. Pass it to getPosts() using dispatch and change the
-location with useNavigate() to illustrate to the user where we're at.
-
-useEffect(() => {
-  if (searchTerm) {
-    useNavigate(urlWithSearchQuery);
-    dispatch(getPosts(urlWithSearchQuery));
-  } else {
-    dispatch(getPosts(urlWithoutSearchQuery))
-  }
-
-
-})
+  Searchbar component holds search term on state. User types in the searchbar. 
+  User clicks on "search" button. The click is handled by a function that uses dispatch to 
+  change the search term being held in state and the useNavigate hook to change the page to:
+  "/search.json?q=${searchTerm}"
+  The "search" in pathname will activate a route that displays the posts feature under a "Results
+   for {term}" heading.
+  The posts component already reads pathname to know the URL where it should fetch content. 
+  We'll make it also be aware of the search params in the URL and use it to fetch content when
+  the search term is not an empty string.
 
 */
-
