@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { getPosts, selectPosts, selectIsLoading, selectFetchFailed } from "./postsSlice.js";
+import { getFetchUrl } from "../../utils/getFetchUrl.js";
 import loadingIcon from "../../icons/loading.gif";
 import errorIcon from "../../icons/error.png";
 import emptyIcon from "../../icons/empty.png";
@@ -10,15 +11,20 @@ import styles from "./Posts.module.css";
 
 const Posts = () => {
   const dispatch = useDispatch();
-  const { pathname } = useLocation();
-  const urlToFetch = `https://www.reddit.com${pathname}.json`;
+  const { pathname, search } = useLocation();
+
+  // Based on current location, get appropriate url to fetch
+  const fetchUrl = getFetchUrl(pathname, search);
+
+  // Read values from posts state
   const postsArray = useSelector(selectPosts);
   const isLoading = useSelector(selectIsLoading);
   const fetchFailed = useSelector(selectFetchFailed);
 
+  // Get posts data whenever the location changes
   useEffect(() => {
-    dispatch(getPosts(urlToFetch))
-  }, [dispatch, urlToFetch]);
+    dispatch(getPosts(fetchUrl));
+  }, [dispatch, fetchUrl]);
 
   if (isLoading) return (
       <div className={styles.loadingContainer}>
@@ -27,11 +33,11 @@ const Posts = () => {
     );
 
   if (fetchFailed) return (
-      <div className={styles.errorMessageContainer}>
-        <img src={errorIcon} alt="error icon" className={styles.errorIcon} />
-        <p className={styles.errorMessage}>Something went wrong, please try again...</p>
-      </div>
-    );
+    <div className={styles.errorMessageContainer}>
+      <img src={errorIcon} alt="error icon" className={styles.errorIcon} />
+      <p className={styles.errorMessage}>Something went wrong, please try again...</p>
+    </div>
+  );
 
   if (postsArray.length === 0) return (
         <div className={styles.emptyMessageContainer}>
@@ -47,13 +53,18 @@ const Posts = () => {
           return <Post post={post} key={post.id} />
         })
       }
-      <a 
-      href={`https://www.reddit.com${pathname}`} 
-      className={styles.linkToReddit}
-      target="_blank" 
-      rel="noreferrer">
-        View more comments on Reddit.com
-      </a>
+      {
+        search ?
+        ""
+        :
+        <a 
+        href={`https://www.reddit.com${pathname}`} 
+        className={styles.linkToReddit}
+        target="_blank" 
+        rel="noreferrer">
+          View more posts on Reddit.com
+        </a>
+      }
     </section>
   );
 };
