@@ -137,5 +137,26 @@ object.kind === "more" that contains info about more comments.
 .replies --> Object containing an array of replies to this comment
 .score --> Score of comment
 
+SEARCHBAR FEATURE - Implementation Idea
+
+Posts component
+
+Select search term stored in state and check if it's empty.
+If it's empty, compose a url to fetch using only pathname.
+If it's not empty, compose a url to fetch using pathname and search term
+as a query parameter. Pass it to getPosts() using dispatch and change the
+location with useNavigate() to illustrate to the user where we're at.
+
+useEffect(() => {
+  if (searchTerm) {
+    useNavigate(urlWithSearchQuery);
+    dispatch(getPosts(urlWithSearchQuery));
+  } else {
+    dispatch(getPosts(urlWithoutSearchQuery))
+  }
+
+
+})
+
 */
 
