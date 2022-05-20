@@ -11,13 +11,14 @@ import styles from "./Posts.module.css";
 const Posts = () => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
+  const urlToFetch = `https://www.reddit.com${pathname}.json`;
   const postsArray = useSelector(selectPosts);
   const isLoading = useSelector(selectIsLoading);
   const fetchFailed = useSelector(selectFetchFailed);
 
   useEffect(() => {
-    dispatch(getPosts(pathname))
-  }, [pathname, dispatch]);
+    dispatch(getPosts(urlToFetch))
+  }, [dispatch, urlToFetch]);
 
   if (isLoading) return (
       <div className={styles.loadingContainer}>
