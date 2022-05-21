@@ -1,0 +1,24 @@
+.scrollTopButton {
+  position: fixed;
+  left: 75%;
+  top: 90%;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #FFFFFF;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 40px;
+}
+
+.scrollTopButton:hover {
+  background-color: #F6F7F8;
+  cursor: pointer;
+}
+
+.scrollTopButton:active {
+  background-color: #FFFFFF;
+}
