@@ -7,6 +7,12 @@
   background-color: #FFFFFF;
 }
 
+.linkContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .icon {
   height: 20px;
   padding-right: 5px;

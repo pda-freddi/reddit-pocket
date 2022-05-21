@@ -1,7 +1,7 @@
 .backButton {
   align-self: end;
   justify-self: start;
-  width: 100px;
+  width: 90px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;

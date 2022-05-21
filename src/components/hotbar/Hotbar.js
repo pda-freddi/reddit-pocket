@@ -12,22 +12,22 @@ const Hotbar = () => {
 
   return (
     <article className={styles.hotbarContainer}>
-      <section className="hot">
+      <section className={styles.linkContainer}>
         <img src={hotIcon} alt="fire icon" className={styles.icon} />
         <Link to={buildLinkPath(pathname, "hot")} className={styles.link}>Hot</Link>
       </section>
 
-      <section className="topVoted">
+      <section className={styles.linkContainer}>
         <img src={topVotedIcon} alt="top voted icon" className={styles.icon} />
         <Link to={buildLinkPath(pathname, "top")} className={styles.link}>Top Voted</Link>
       </section>
 
-      <section className="rising">
+      <section className={styles.linkContainer}>
         <img src={risingIcon} alt="rising up arrow" className={styles.icon} />
         <Link to={buildLinkPath(pathname, "rising")} className={styles.link}>Rising</Link>
       </section>
 
-      <section className="new">
+      <section className={styles.linkContainer}>
         <img src={newIcon} alt="new icon" className={styles.icon} />
         <Link to={buildLinkPath(pathname, "new")} className={styles.link}>Recent</Link>
       </section>

@@ -9,7 +9,7 @@ const BackButton = () => {
 
   return (
     <button className={styles.backButton} onClick={() => navigate(-1)}>
-      <img src={leftArrowIcon} alt="left arrow" />Back
+      <img src={leftArrowIcon} alt="previous icon" />Back
     </button>
   );
 };
