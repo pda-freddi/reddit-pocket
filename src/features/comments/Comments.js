@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { getComments,
          selectIsLoading,
          selectFetchFailed,
@@ -11,16 +11,17 @@ import { getFormattedNumOfComments } from "../../utils/getFormattedDetails.js";
 import loadingIcon from "../../icons/loading.gif";
 import emptyIcon from "../../icons/empty.png";
 import errorIcon from "../../icons/error.png";
-import leftArrowIcon from "../../icons/left-arrow.png"
+import BackButton from "../../components/buttons/backButton/BackButton.js";
 import Post from "../../components/post/Post.js";
 import Comment from "../../components/comment/Comment.js";
 import styles from "./Comments.module.css";
+
+
 
 const Comments = () => {
 
   const dispatch = useDispatch();
   const { pathname } = useLocation();
-  const navigate = useNavigate();
   const commentsArray = useSelector(selectComments);
   const post = useSelector(selectPost);
   const isLoading = useSelector(selectIsLoading);
@@ -33,46 +34,38 @@ const Comments = () => {
   }, [dispatch, pathname]);
 
   if (isLoading) return (
-      <>
-        <button className={styles.backButton} onClick={() => navigate(-1)}>
-          <img src={leftArrowIcon} alt="left arrow" />Back
-        </button>
-        <div className={styles.loadingContainer}>
-          <img src={loadingIcon} alt="loading icon" className={styles.loadingIcon} />
-        </div>
-      </>
-    );
+    <>
+      <BackButton />
+      <div className={styles.loadingContainer}>
+        <img src={loadingIcon} alt="loading icon" className={styles.loadingIcon} />
+      </div>
+    </>
+
+  );
 
   if (fetchFailed) return (
-      <>
-        <button className={styles.backButton} onClick={() => navigate(-1)}>
-          <img src={leftArrowIcon} alt="left arrow" />Back
-        </button>
-        <div className={styles.errorMessageContainer}>
-          <img src={errorIcon} alt="error icon" className={styles.errorIcon} />
-          <p className={styles.errorMessage}>Something went wrong, please try again...</p>
-        </div>
-      </>
-    );
+    <>
+      <BackButton />
+      <div className={styles.errorMessageContainer}>
+        <img src={errorIcon} alt="error icon" className={styles.errorIcon} />
+        <p className={styles.errorMessage}>Something went wrong, please try again...</p>
+      </div>
+    </>
+  );
 
   if (commentsArray.length === 0) return (
-      <>
-        <button className={styles.backButton} onClick={() => navigate(-1)}>
-          <img src={leftArrowIcon} alt="left arrow" />Back
-        </button>
-        <div className={styles.emptyMessageContainer}>
-          <img src={emptyIcon} alt="empty icon" className={styles.emptyIcon} />
-          <p className={styles.emptyMessage}>No comments to show here</p>
-        </div>
-      </>
-    );
+    <>
+      <BackButton />
+      <div className={styles.emptyMessageContainer}>
+        <img src={emptyIcon} alt="empty icon" className={styles.emptyIcon} />
+        <p className={styles.emptyMessage}>No comments to show here</p>
+      </div>
+    </>
+  );
 
   return (
     <>
-      <button className={styles.backButton} onClick={() => navigate(-1)}>
-        <img src={leftArrowIcon} alt="left arrow" />Back
-      </button>
-
+      <BackButton />
       <section className={styles.contentContainer}>
         <Post post={post} />
         <section className={styles.commentsContainer}>
