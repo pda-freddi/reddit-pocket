@@ -14,7 +14,7 @@ export function getPostMediaJSX(post) {
     return (
       <video 
       controls 
-      src={post.media.fallback_url}
+      src={post.media?.fallback_url}
       className={styles.postVideo}>
       </video>
     );
