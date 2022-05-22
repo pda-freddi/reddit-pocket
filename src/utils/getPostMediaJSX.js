@@ -11,12 +11,24 @@ export function getPostMediaJSX(post) {
   }
 
   if (post.isVideo) {
+    if (!post.media) return <p>This video was deleted</p>;
     return (
-      <video 
-      controls 
-      src={post.media?.fallback_url}
-      className={styles.postVideo}>
-      </video>
+      <>
+        <video
+        id={`${post.id}v`}
+        controls
+        src={post.media.fallback_url}
+        className={styles.postVideo}>
+        </video>
+        {
+          post.media.is_gif ?
+          "" 
+          :
+          // audio src = `${post.url}/DASH_audio.mp4`; will return 403 error if there's no audio file
+          <audio src={`${post.url}/DASH_audio.mp4`} id={`${post.id}a`}>
+          </audio>
+        }
+      </>
     );
   }
 

@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { getFormattedDate,
          getFormattedScore,
-         getFormattedNumOfComments } from "../../utils/getFormattedDetails";
+         getFormattedNumOfComments } from "../../utils/getFormattedDetails.js";
 import upArrowIcon from "../../icons/up-arrow.png";
 import downArrowIcon from "../../icons/down-arrow.png";
 import { Link } from "react-router-dom";
-import { getPostMediaJSX } from "../../utils/getPostMediaJSX";
+import { getPostMediaJSX } from "../../utils/getPostMediaJSX.js";
 import styles from "./Post.module.css";
 
 const Post = ({ post }) => {
 
-  // Check if current location is comments page to render appropriate links
+  // Check if current location is comments page to render appropriate link
   const { pathname } = useLocation();
   const isCommentsPage = pathname.includes("comments");
 
@@ -22,6 +22,16 @@ const Post = ({ post }) => {
 
   // Get post media as JSX
   const postMediaJSX = getPostMediaJSX(post);
+  
+  // When post has video and audio, play them simultaneously
+  useEffect(() => {
+    if (post.isVideo && post.media && !post.media.is_gif) {
+      const video = document.getElementById(`${post.id}v`);
+      const audio = document.getElementById(`${post.id}a`);
+      video.onplay  = () => audio.play();
+      video.onpause = () => audio.pause();
+    }
+  });
 
   return (
     <article className={styles.postContainer}>
