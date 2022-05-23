@@ -1,5 +1,6 @@
 import styles from "../components/post/Post.module.css";
 import Markdown from "markdown-to-jsx";
+import silentAudio from "../utils/audio/10-seconds-of-silence.mp3"
 
 // Check the kind of media in the post object and return appropriate JSX to render in Post component
 export function getPostMediaJSX(post) {
@@ -17,15 +18,19 @@ export function getPostMediaJSX(post) {
         <video
         id={`${post.id}v`}
         controls
-        src={post.media.fallback_url}
-        className={styles.postVideo}>
+        className={styles.postVideo}
+        >
+          <source src={post.media.fallback_url} type="video/mp4" />
         </video>
         {
           post.media.is_gif ?
           "" 
           :
           // audio src = `${post.url}/DASH_audio.mp4`; will return 403 error if there's no audio file
-          <audio src={`${post.url}/DASH_audio.mp4`} id={`${post.id}a`}>
+          // silent audio added as fallback for these cases
+          <audio id={`${post.id}a`}>
+            <source src={`${post.url}/DASH_audio.mp4`} type="audio/mp4" />
+            <source src={silentAudio} type="audio/mpeg" />
           </audio>
         }
       </>
