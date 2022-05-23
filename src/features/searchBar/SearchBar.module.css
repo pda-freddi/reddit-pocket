@@ -24,7 +24,7 @@
 
 .searchInput {
   width: 100%;
-  height: 5vh;
+  height: 36px;
   font-family: Poppins, sans-serif;
   font-size: 1.0rem;
   border: none;
@@ -45,6 +45,7 @@
 .searchButton {
   background-color: #FFFFFF;
   border: none;
+  border-radius: 8px;
 }
 
 .searchButton:hover {
@@ -54,8 +55,16 @@
 .clearButton {
   background-color: #FFFFFF;
   border: none;
+  border-radius: 8px;
 }
 
 .clearButton:hover {
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .searchbarContainer {
+    max-width: 100%;
+    margin: 0 10px;
+  }
 }

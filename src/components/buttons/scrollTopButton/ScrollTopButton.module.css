@@ -1,6 +1,6 @@
 .scrollTopButton {
   position: fixed;
-  left: 75%;
+  left: 65%;
   top: 90%;
   width: 80px;
   display: flex;
@@ -21,4 +21,10 @@
 
 .scrollTopButton:active {
   background-color: #FFFFFF;
+}
+
+@media screen and (max-width: 900px) {
+  .scrollTopButton {
+    display: none;
+  }
 }

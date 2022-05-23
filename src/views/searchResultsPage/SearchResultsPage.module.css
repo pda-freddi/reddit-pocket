@@ -33,3 +33,10 @@
   text-align: left;
   font-style: italic;
 }
+
+@media screen and (max-width: 720px) {
+  .searchResultsHeading {
+    font-size: 1.25rem;
+    margin: 5px 0;
+  }
+}

@@ -1,6 +1,6 @@
 .main {
   position: relative;
-  top: 62.475px;
+  top: 60.075px;
   padding: 30px;
 }
 
@@ -9,11 +9,25 @@
   text-align: center;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(500px, 900px) 300px;
+  grid-template-columns: minmax(500px, 640px) 300px;
   grid-template-rows: 50px;
+  justify-content: center;
   align-items: stretch;
   justify-items: stretch;
   column-gap: 30px;
   row-gap: 20px;
   color: #222222;
+}
+
+@media screen and (max-width: 900px) {
+  .main {
+    padding: 0;
+    margin: 10px;
+  }
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
 }

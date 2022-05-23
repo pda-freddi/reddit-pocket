@@ -28,3 +28,24 @@
 .link:hover {
   font-weight: 700;
 }
+
+@media screen and (max-width: 900px) {
+  .hotbarContainer {
+    width: 100%;
+    max-width: 640px;
+    height: 40px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .link {
+    font-size: 0.90rem;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .link {
+    font-size: 0.70rem;
+  }
+}

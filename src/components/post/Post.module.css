@@ -144,3 +144,75 @@
 .postDetailsCommentsLink:hover {
   background-color: #26262710;
 }
+
+@media screen and (max-width: 900px) {
+  .postContainer {
+    max-width: 640px;
+    margin: 0 auto 10px auto;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .postDetails {
+    font-size: 0.75rem;
+  }
+
+  .postDetailsComments {
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+
+  .postDetailsCommentsLink {
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .postContainer {
+    flex-direction: column-reverse;
+  }
+
+  .postScoreContainer {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+
+  .postScore {
+    font-weight: 400;
+  }
+
+  .postScoreUpArrow {
+    width: 16px;
+    height: 16px;
+    margin: 0 5px;
+  }
+
+  .postScoreUpArrow:hover {
+    background-color: #3BCB5680;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .postScoreDownArrow {
+    width: 16px;
+    height: 16px;
+    margin: 0 5px;
+  }
+
+  .postScoreDownArrow:hover {
+    background-color: #ED001C80;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .postDetails, .postDetailsComments, .postDetailsCommentsLink {
+    padding: 5px;
+  }
+}

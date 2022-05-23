@@ -76,3 +76,14 @@
 .linkToReddit:active {
   color: #D83148;
 }
+
+@media screen and (max-width: 900px) {
+  .commentsContainer {
+    max-width: 640px;
+    margin: 0 auto 10px auto;
+  }
+
+  .commentsHeading {
+    font-size: 1.20rem;
+  }
+}

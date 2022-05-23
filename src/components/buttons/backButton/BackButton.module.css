@@ -21,3 +21,9 @@
 .backButton:active {
   background-color: #FFFFFF;
 }
+
+@media screen and (max-width: 900px) {
+  .backButton {
+    align-self: start;
+  }
+}
