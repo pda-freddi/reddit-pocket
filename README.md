@@ -1,46 +1,48 @@
-# Getting Started with Create React App and Redux
+# Reddit Pocket
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+This project was built for Codecademy's Full Stack Engineering Path.
 
-## Available Scripts
+It's a Reddit Client built with React and Redux. [Reddit](https://www.reddit.com/) is a network of communities where people can dive into their interests, hobbies and passions.
 
-In the project directory, you can run:
+This application features posts and comments delivered through Reddit's JSON API. The user can browse popular subreddits and filter the content by "hot", "top voted", "rising" and "new". A search feature is also provided to find posts that match a given search term.
 
-### `npm start`
+A live demo can be found [here](www.example.com).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* React v18.1.0
+* Redux Toolkit v1.8.1
+* React Router v6.3.0
+* CSS Modules
+* [Reddit's JSON API](https://github.com/reddit-archive/reddit/wiki/API)
 
-### `npm test`
+## Wireframe
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="./docs/wireframe-desktop-mobile.png" alt="wireframe" width="600px" />
 
-### `npm run build`
+The project's plan and thought-process documentation can be found in the [docs folder](./docs).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Screenshots
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src="./docs/screenshots/desktop/desktop_feed.jpg" alt="post feed" width="600px" />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+More screenshots of [desktop](./docs/screenshots/desktop) and [mobile](./docs/screenshots/mobile) views are available.
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Simple UI with flat design and soft colors.
+* Post feed browsing by popular subreddits and sections (hot, top voted, rising and new).
+* Search bar to find posts by specific terms.
+* Unique view for any post and its comments.
+* Responsive layout that adapts to different screen sizes.
+* Relevant link to Reddit.com at the end of each section if the viewer wants to see more content or comments.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Known Issues
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* Some text posts with tables or long links can overflow the post container and break the layout pattern. The issue has to do with the markdown rendering of the content, which is currently being handled by the "markdown-to-jsx" library.
+* Video's audio fall out of sync if user clicks through its progress bar and audio volume cannot be controlled through video controls. This happens because Reddit's videos have their audio sent in a separate file through the API. Getting them to play simultaneously was accomplished with a simple workaround, but to get them to stay in sync is a bit more complex. I'm looking into alternatives to fix this issue.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Acknowledgements
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Icons from [freeicons.io](https://freeicons.io/).
+* Loading animation from [loading.io](https://loading.io/css/).
