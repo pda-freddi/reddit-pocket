@@ -1,51 +1,44 @@
-/* Calculates the date difference between current time and date the post/comment was sent 
+/* Calculates the difference between current time and time the post/comment was sent 
 and returns appropriate strings to display in component */
-export function getFormattedDate(date) {
 
+export function getFormattedDate(time) {
   const currentDate = new Date();
-  const today = {
-    year: currentDate.getFullYear(),
-    month: currentDate.getMonth(),
-    day: currentDate.getDate(),
-    hour: currentDate.getHours(),
-    minutes: currentDate.getMinutes()
-  }
-
-  const creationDate = new Date(date * 1000);
-  const sent = {
-    year: creationDate.getFullYear(),
-    month: creationDate.getMonth(),
-    day: creationDate.getDate(),
-    hour: creationDate.getHours(),
-    minutes: creationDate.getMinutes()
-  }
-
+  // time parameter is in seconds, so convert currentTime to seconds
+  const currentTime = (currentDate.getTime() / 1000);
+  const creationTime = time;
+  // Calculate time difference and evaluate in if statements to return
+  // an appropriate string
+  const timeDifference = currentTime - creationTime;
   let formattedDate = "";
-
-  if (today.year !== sent.year) {
-    const yearsDiff = (today.year - sent.year);
-    formattedDate = yearsDiff > 1 ? yearsDiff + " years ago"
-    : yearsDiff + " year ago";
-  } else if (today.month !== sent.month) {
-    const monthsDiff = (today.month - sent.month);
-    formattedDate = monthsDiff > 1 ? monthsDiff + " months ago"
-    : monthsDiff + " month ago";
-  } else if (today.day !== sent.day) {
-    const daysDiff = (today.day - sent.day);
-    formattedDate = daysDiff > 1 ? daysDiff + " days ago"
-    : daysDiff + " day ago";
-  } else if (today.hour !== sent.hour) {
-    const hoursDiff = (today.hour - sent.hour);
-    formattedDate =  hoursDiff > 1 ? hoursDiff + " hours ago" 
-    : hoursDiff + " hour ago";
-  } else if (today.minutes !== sent.minutes) {
-    const minutesDiff = (today.minutes - sent.minutes);
-    formattedDate = minutesDiff > 1 ? minutesDiff + " minutes ago"
-    : minutesDiff + " minute ago";
-  } else {
+  /* For reference:
+  1 day = 86.400 seconds
+  1 week = 7 days = 604.800 seconds
+  1 month = 30,42 days = 2.628.288 seconds
+  1 year = 365 days = 31.536.000 seconds
+  */
+  if (timeDifference < 60) {
     formattedDate = "seconds ago";
+  } else if (timeDifference < 120) {
+    formattedDate = "1 minute ago";
+  } else if (timeDifference < 3600) {
+    formattedDate = Math.floor(timeDifference / 60) + " minutes ago";
+  } else if (timeDifference < 7200) {
+    formattedDate = "1 hour ago";
+  } else if (timeDifference < 86400) {
+    formattedDate = Math.floor(timeDifference / 3600) + " hours ago";
+  } else if (timeDifference < 172800) {
+    formattedDate = "1 day ago";
+  } else if (timeDifference < 2628288) {
+    formattedDate = Math.floor(timeDifference / 86400) + " days ago";
+  } else if (timeDifference < 5256576) {
+    formattedDate = "1 month ago";
+  } else if (timeDifference < 31536000) {
+    formattedDate = Math.floor(timeDifference / 2628288) + " months ago";
+  } else if (timeDifference < 63072000) {
+    formattedDate = "1 year ago";
+  } else if (timeDifference >= 63072000) {
+    formattedDate = Math.floor(timeDifference / 31536000) + " years ago";
   }
-
   return formattedDate;
 }
 
@@ -56,15 +49,17 @@ export function getFormattedScore(score) {
   } else if (score > 1000) {
     formattedScore = (score / 1000).toFixed(1) + "k";
   } else if (score > 10) {
-    formattedScore = score;
-  } 
+    formattedScore = score.toString();
+  }
   return formattedScore;
 }
 
 export function getFormattedNumOfComments(numOfComments) {
-  let formattedNumOfComments = numOfComments;
+  let formattedNumOfComments;
   if (numOfComments > 1000) {
     formattedNumOfComments = (numOfComments / 1000).toFixed(1) + "k";
+  } else {
+    formattedNumOfComments = numOfComments.toString();
   }
   return formattedNumOfComments;
 }
