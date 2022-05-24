@@ -25,7 +25,7 @@ Unit tests will be written with Jest and React Testing Library and end-to-end te
 
 ## Development Methodology 
 
-No specific development methodology will be applied to this project. Rather a hands-on, trial and error approach will be used to provide rich opportunities to analyze and evaluate choices, make mistakes and re-think decisions along the way. Upon conclusion of the project, an assessment will be made to reflect on how different development methodologies could have helped to address and prevent mistakes and issues that were faced.
+No specific development methodology will be applied to this project. Rather a hands-on, trial and error approach will be used to provide rich opportunities to analyze and evaluate choices, make mistakes and re-think decisions along the way.
 
 ## Wireframe 
 
