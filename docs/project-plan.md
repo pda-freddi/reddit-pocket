@@ -46,7 +46,7 @@ This is a tentative division of the UI in React components. Adjustments will pro
 
 ## CSS Style Guide
 
-Font-family: [Poppins](https://fonts.google.com/specimen/Poppins?category=Sans+Serif#standard-styles)
+Font-family: [Poppins](https://fonts.google.com/specimen/Poppins?category=Sans+Serif#standard-styles) <br>
 Color palette: <img src="./color-palette.png" alt="color palette" />
 * Cultured: #F5F5F5 (background)
 * Rusty Red: #D83148
