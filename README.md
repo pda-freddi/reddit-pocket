@@ -18,7 +18,7 @@ A live demo can be found [here](www.example.com).
 
 ## Wireframe
 
-<img src="./docs/wireframe-desktop-mobile.png" alt="wireframe" width="600px" />
+<img src="./docs/wireframe/wireframe-desktop-mobile.png" alt="wireframe" width="600px" />
 
 The project's plan and thought-process documentation can be found in the [docs folder](./docs).
 
