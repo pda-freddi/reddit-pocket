@@ -29,7 +29,7 @@ No specific development methodology will be applied to this project. Rather a ha
 
 ## Wireframe 
 
-<img src="./wireframe-desktop-mobile.png" alt="wireframe" width="600px" />
+<img src="./wireframe/wireframe-desktop-mobile.png" alt="wireframe" width="600px" />
 
 ## React UI Components Hierarchy
 
@@ -48,7 +48,7 @@ This is a tentative division of the UI in React components. Adjustments will pro
 
 Font-family: [Poppins](https://fonts.google.com/specimen/Poppins?category=Sans+Serif#standard-styles) <br>
 Color palette: <br>
-<img src="./color-palette.png" alt="color palette" width="500px" />
+<img src="./images/color-palette.png" alt="color palette" width="500px" />
 * Cultured: #F5F5F5 (background)
 * Rusty Red: #D83148
 * Lapis Lazuli: #07599C
