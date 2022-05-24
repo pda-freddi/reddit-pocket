@@ -5,7 +5,7 @@ import silentAudio from "../utils/audio/10-seconds-of-silence.mp3"
 // Check the kind of media in the post object and return appropriate JSX to render in Post component
 export function getPostMediaJSX(post) {
 
-  if (post.postHint === 'image') {
+  if (post.postHint === "image") {
     return (
       <img src={post.url} alt="" className={styles.postImage} />
     );
