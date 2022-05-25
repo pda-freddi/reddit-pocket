@@ -1,3 +1,4 @@
+import React from "react";
 import { getPostMediaJSX } from "../getPostMediaJSX.js";
 
 describe("returns appropriate JSX for each type of media", () => {
