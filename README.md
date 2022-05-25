@@ -15,7 +15,7 @@ A live demo can be found [here](www.example.com).
 * React Router v6.3.0
 * CSS Modules
 * [Reddit's JSON API](https://github.com/reddit-archive/reddit/wiki/API)
-* Jest and React Testing Library for tests
+* Jest and React Testing Library
 
 ## Wireframe
 
@@ -41,7 +41,7 @@ More screenshots of [desktop](./docs/screenshots/desktop) and [mobile](./docs/sc
 ## Known Issues
 
 * Some text posts with tables or long links can overflow the post container and break the layout pattern. The issue has to do with the markdown rendering of the content, which is currently being handled by the "markdown-to-jsx" library.
-* Video's audio fall out of sync if user clicks through its progress bar and audio volume cannot be controlled through video controls. This happens because Reddit's videos have their audio sent in a separate file through the API. Getting them to play simultaneously was accomplished with a simple workaround, but to get them to stay in sync is a bit more complex. I'm currently looking into alternatives to fix this issue.
+* A video's audio will fall out of sync if user clicks through the video's progress bar and audio volume cannot be controlled through video controls. This happens because Reddit's videos have their audio sent in a separate file through the API. Getting them to play simultaneously was accomplished with a simple workaround, but to get them to stay in sync is a bit more complex. I'm currently looking into alternatives to fix this issue.
 
 ## Improvements
 
