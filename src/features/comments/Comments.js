@@ -16,8 +16,6 @@ import Post from "../../components/post/Post.js";
 import Comment from "../../components/comment/Comment.js";
 import styles from "./Comments.module.css";
 
-
-
 const Comments = () => {
 
   const dispatch = useDispatch();
