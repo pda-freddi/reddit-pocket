@@ -9,58 +9,58 @@ describe("getFormattedDate", () => {
   describe("returns appropriate strings for each date", () => {
     it("should return seconds ago", () => {
       let date = new Date();
-      let epochSecondsDate = (date.getTime() / 1000);
-      expect(getFormattedDate(epochSecondsDate)).toBe("seconds ago");
+      let now = (date.getTime() / 1000);
+      expect(getFormattedDate(now)).toBe("seconds ago");
     });
     it("should return 1 minute ago", () => {
       let date = new Date();
-      let epochSecondsDate = (date.getTime() / 1000) - 60;
-      expect(getFormattedDate(epochSecondsDate)).toBe("1 minute ago");
+      let oneMinuteAgo = (date.getTime() / 1000) - 60;
+      expect(getFormattedDate(oneMinuteAgo)).toBe("1 minute ago");
     });
     it("should return 5 minutes ago", () => {
       let date = new Date();
-      let epochSecondsDate = (date.getTime() / 1000) - 300;
-      expect(getFormattedDate(epochSecondsDate)).toBe("5 minutes ago");
+      let fiveMinutesAgo = (date.getTime() / 1000) - 300;
+      expect(getFormattedDate(fiveMinutesAgo)).toBe("5 minutes ago");
     });
     it("should return 1 hour ago", () => {
       let date = new Date();
-      let epochSecondsDate = (date.getTime() / 1000) - 3600;
-      expect(getFormattedDate(epochSecondsDate)).toBe("1 hour ago");    
+      let oneHourAgo = (date.getTime() / 1000) - 3600;
+      expect(getFormattedDate(oneHourAgo)).toBe("1 hour ago");    
     });
     it("should return 22 hours ago", () => {
       let date = new Date();
-      let epochSecondsDate = (date.getTime() / 1000) - 79200;
-      expect(getFormattedDate(epochSecondsDate)).toBe("22 hours ago");
+      let twentyTwoHoursAgo = (date.getTime() / 1000) - 79200;
+      expect(getFormattedDate(twentyTwoHoursAgo)).toBe("22 hours ago");
     });
     it("should return 1 day ago", () => {
       let date = new Date();
-      let epochSecondsDate = (date.getTime() / 1000) - 86400;
-      expect(getFormattedDate(epochSecondsDate)).toBe("1 day ago");
+      let oneDayAgo = (date.getTime() / 1000) - 86400;
+      expect(getFormattedDate(oneDayAgo)).toBe("1 day ago");
     });
     it("should return 4 days ago", () => {
       let date = new Date();
-      let epochSecondsDate = (date.getTime() / 1000) - 345600;
-      expect(getFormattedDate(epochSecondsDate)).toBe("4 days ago");
+      let fourDaysAgo = (date.getTime() / 1000) - 345600;
+      expect(getFormattedDate(fourDaysAgo)).toBe("4 days ago");
     });
     it("should return 1 month ago", () => {
       let date = new Date();
-      let epochSecondsDate = (date.getTime() / 1000) - 2628288;
-      expect(getFormattedDate(epochSecondsDate)).toBe("1 month ago");
+      let oneMonthAgo = (date.getTime() / 1000) - 2628288;
+      expect(getFormattedDate(oneMonthAgo)).toBe("1 month ago");
     });
     it("should return 11 months ago", () => {
       let date = new Date();
-      let epochSecondsDate = (date.getTime() / 1000) - 29635200;
-      expect(getFormattedDate(epochSecondsDate)).toBe("11 months ago");
+      let elevenMonthsAgo = (date.getTime() / 1000) - 29635200;
+      expect(getFormattedDate(elevenMonthsAgo)).toBe("11 months ago");
     });
     it("should return 1 year ago", () => {
       let date = new Date();
-      let epochSecondsDate = (date.getTime() / 1000) - 31536000;
-      expect(getFormattedDate(epochSecondsDate)).toBe("1 year ago");
+      let oneYearAgo = (date.getTime() / 1000) - 31536000;
+      expect(getFormattedDate(oneYearAgo)).toBe("1 year ago");
     });
     it("should return 5 year ago", () => {
       let date = new Date();
-      let epochSecondsDate = (date.getTime() / 1000) - 173448000;
-      expect(getFormattedDate(epochSecondsDate)).toBe("5 years ago");
+      let fiveYearsAgo = (date.getTime() / 1000) - 173448000;
+      expect(getFormattedDate(fiveYearsAgo)).toBe("5 years ago");
     });
   });
 });

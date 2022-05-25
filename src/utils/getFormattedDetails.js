@@ -3,7 +3,7 @@ and returns appropriate strings to display in component */
 
 export function getFormattedDate(time) {
   const currentDate = new Date();
-  // time parameter is in seconds, so convert currentTime to seconds
+  // time parameter is expected in epoch seconds, so convert currentTime to seconds
   const currentTime = (currentDate.getTime() / 1000);
   const creationTime = time;
   // Calculate time difference and evaluate in if statements to return
