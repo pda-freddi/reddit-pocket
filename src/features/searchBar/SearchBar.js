@@ -22,17 +22,15 @@ const Searchbar = () => {
     navigate(`/search?q=${searchTerm}`);
   };
 
-  const focusInput = () => {
-    document.getElementById("searchInput").focus();
-  };
-
   return (
     <div className={styles.searchbarContainer}>
-      <img 
+      <label htmlFor="searchInput" className={styles.searchInputLabel}>
+        <img 
         className={styles.searchIcon} 
         src={searchIcon} 
         alt="Search" 
-        onClick={focusInput}/>
+        />
+      </label>
       <input
         className={styles.searchInput}
         id="searchInput"
