@@ -11,8 +11,7 @@
 ## Sumary
 
 The goal of this project is to develop a simple interactive UI for Reddit using React and Redux. 
-The external data will be fetched using the JSON Reddit API. This method does not require user authentication and provides read-only data, which simplifies the
-logic necessary for the fetching but limits the functionality that the application can provide. Therefore, the application will feature subreddit browsing 
+The external data will be fetched using the JSON Reddit API. This method does not require user authentication and provides read-only data, which simplifies the logic necessary for the fetching but limits the functionality that the application can provide. Therefore, the application will feature subreddit browsing 
 and displaying of posts and comments, but not the ability to post comments, rate posts and other features that would require a user account.
 
 ## Implementation
@@ -21,7 +20,7 @@ The React library will be used to write the logic of the components that make up
 
 A wireframe and CSS style specification will guide the development of the visual aspects of the UI. However, most design decisions are intended to take place as the application takes shape, since this project is for educational purposes only and does not need to follow any specific design rules. The idea is to build a simple and elegant UI, with flat design and soft colors. Using CSS Grid and media queries, the application will be responsive and display appropriately on either desktop, tablets or smartphones.
 
-Unit tests will be written with Jest and React Testing Library and end-to-end tests will be written with Selenium. Again, since this project is for educational purpose, the tests will be written mostly with the intention of learning and practicing, so a large test coverage will not be a concern.
+Unit and integration tests will be written with Jest and React Testing Library.
 
 ## Development Methodology 
 
