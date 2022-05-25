@@ -55,7 +55,7 @@ export function getFormattedScore(score) {
 }
 
 export function getFormattedNumOfComments(numOfComments) {
-  if (!numOfComments) return;
+  if (numOfComments === undefined) return;
   let formattedNumOfComments;
   if (numOfComments > 1000) {
     formattedNumOfComments = (numOfComments / 1000).toFixed(1) + "k";
