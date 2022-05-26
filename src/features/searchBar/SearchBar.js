@@ -44,7 +44,7 @@ const Searchbar = () => {
         searchTerm ?
         <>
         <button className={styles.searchButton} onClick={handleClick}>
-          <img src={checkIcon} alt="Search" />
+          <img src={checkIcon} alt="Submit" />
         </button>
         <button className={styles.clearButton} onClick={() => dispatch(clearSearchTerm())}>
           <img src={clearIcon} alt="Clear" />
