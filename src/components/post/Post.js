@@ -28,8 +28,14 @@ const Post = ({ post }) => {
     if (post.isVideo && post.media && !post.media.is_gif) {
       const video = document.getElementById(`${post.id}v`);
       const audio = document.getElementById(`${post.id}a`);
-      video.onplay  = () => audio.play();
-      video.onpause = () => audio.pause();
+      const playAudio = () => audio.play();
+      const pauseAudio = () => audio.pause();
+      video.addEventListener("play", playAudio);
+      video.addEventListener("pause", pauseAudio);
+      return () => {
+        video.removeEventListener("play", playAudio);
+        video.removeEventListener("pause", pauseAudio);
+      };
     }
   });
 

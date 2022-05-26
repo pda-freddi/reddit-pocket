@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import topArrowIcon from "../../../icons/top-arrow.png";
 import styles from "./ScrollTopButton.module.css";
 
@@ -22,7 +22,12 @@ const ScrollTopButton = () => {
     });
   };
 
-  window.addEventListener("scroll", toggleVisible);
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisible);
+    return () => {
+      window.removeEventListener("scroll", toggleVisible)
+    };
+  });
 
   return (
     <>
