@@ -7,7 +7,7 @@ export function getPostMediaJSX(post) {
 
   if (post.postHint === "image") {
     return (
-      <img src={post.url} alt="" className={styles.postImage} />
+      <img src={post.url} alt="post media" className={styles.postImage} />
     );
   }
 
@@ -20,7 +20,7 @@ export function getPostMediaJSX(post) {
         controls
         className={styles.postVideo}
         >
-          <source src={post.media.fallback_url} type="video/mp4" />
+          <source src={post.media.fallback_url} type="video/mp4" data-testid={`${post.id}tv`} />
         </video>
         {
           post.media.is_gif ?
@@ -29,7 +29,7 @@ export function getPostMediaJSX(post) {
           // audio src = `${post.url}/DASH_audio.mp4`; will return 403 error if there's no audio file
           // silent audio added as fallback for these cases
           <audio id={`${post.id}a`}>
-            <source src={`${post.url}/DASH_audio.mp4`} type="audio/mp4" />
+            <source src={`${post.url}/DASH_audio.mp4`} type="audio/mp4" data-testid={`${post.id}ta`} />
             <source src={silentAudio} type="audio/mpeg" />
           </audio>
         }

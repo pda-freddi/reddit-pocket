@@ -43,7 +43,7 @@ const Post = ({ post }) => {
     <article className={styles.postContainer}>
       <div className={styles.postScoreContainer}>
         <img src={upArrowIcon} alt="up arrow" className={styles.postScoreUpArrow} />
-        <span className={styles.postScore}>{postScore}</span>
+        <span className={styles.postScore} aria-label="post score">{postScore}</span>
         <img src={downArrowIcon} alt="down arrow" className={styles.postScoreDownArrow} />
       </div>
       <div className={styles.postContent}>
