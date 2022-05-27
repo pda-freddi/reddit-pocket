@@ -1,6 +1,6 @@
-import styles from "../components/post/Post.module.css";
+import styles from "../../components/post/Post.module.css";
 import Markdown from "markdown-to-jsx";
-import silentAudio from "../utils/audio/10-seconds-of-silence.mp3"
+import silentAudio from "../audio/10-seconds-of-silence.mp3"
 
 // Check the kind of media in the post object and return appropriate JSX to render in Post component
 export function getPostMediaJSX(post) {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { buildLinkPath } from "../../utils/buildLinkPath.js";
+import { buildLinkPath } from "../../utils/helpers/buildLinkPath.js";
 import hotIcon from "../../icons/fire.png";
 import topVotedIcon from "../../icons/top-voted.png";
 import risingIcon from "../../icons/trending-up.png";

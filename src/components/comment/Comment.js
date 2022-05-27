@@ -1,6 +1,6 @@
 import React from "react";
 import { getFormattedDate,
-         getFormattedScore } from "../../utils/getFormattedDetails.js";
+         getFormattedScore } from "../../utils/helpers/getFormattedDetails.js";
 import Markdown from "markdown-to-jsx";
 import upArrowIcon from "../../icons/up-arrow.png";
 import downArrowIcon from "../../icons/down-arrow.png";

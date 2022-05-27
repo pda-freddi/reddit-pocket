@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { getFormattedDate,
          getFormattedScore,
-         getFormattedNumOfComments } from "../../utils/getFormattedDetails.js";
+         getFormattedNumOfComments } from "../../utils/helpers/getFormattedDetails.js";
 import upArrowIcon from "../../icons/up-arrow.png";
 import downArrowIcon from "../../icons/down-arrow.png";
 import { Link } from "react-router-dom";
-import { getPostMediaJSX } from "../../utils/getPostMediaJSX.js";
+import { getPostMediaJSX } from "../../utils/helpers/getPostMediaJSX.js";
 import styles from "./Post.module.css";
 
 const Post = ({ post }) => {

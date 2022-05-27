@@ -7,7 +7,7 @@ import { getComments,
          selectPost,
          selectComments
                         } from "./commentsSlice.js";
-import { getFormattedNumOfComments } from "../../utils/getFormattedDetails.js";
+import { getFormattedNumOfComments } from "../../utils/helpers/getFormattedDetails.js";
 import loadingIcon from "../../icons/loading.gif";
 import emptyIcon from "../../icons/empty.png";
 import errorIcon from "../../icons/error.png";

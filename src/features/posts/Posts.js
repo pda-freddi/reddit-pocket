@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { getPosts, selectPosts, selectIsLoading, selectFetchFailed } from "./postsSlice.js";
-import { getFetchUrl } from "../../utils/getFetchUrl.js";
+import { getFetchUrl } from "../../utils/helpers/getFetchUrl.js";
 import loadingIcon from "../../icons/loading.gif";
 import errorIcon from "../../icons/error.png";
 import emptyIcon from "../../icons/empty.png";
