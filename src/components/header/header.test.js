@@ -3,6 +3,10 @@ import { screen, render } from "../../utils/testUtils.js";
 import userEvent from "@testing-library/user-event";
 import Header from "./Header.js";
 
+afterAll(() => {
+  window.history.pushState({}, null, "/");
+});
+
 describe("Header component", () => {
   test("it renders correctly", () => {
     render(<Header />);
@@ -53,6 +57,7 @@ describe("Header component", () => {
 
     // After clicking submit, the input field is cleared
     await user.click(screen.getByRole("button", { name: /submit/i }));
+    expect(window.location.href).toMatch(/search\?q=search%20term/i);
     expect(input).toHaveValue("");
 
     // Submit button and clear button should not be present now

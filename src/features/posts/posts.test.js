@@ -7,17 +7,8 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-describe("posts components", () => {
-  test("renders loading state", () => {
-    render(<Posts />);
-
-    expect(screen.getByRole("img", { name: /loading/i })).toBeInTheDocument();
-
-    // no error message should be present
-    expect(screen.queryByText(/something went wrong/i)).toBeNull();
-  });
-
-  test("renders error mesage if fetch fails", async () => {
+describe("posts feature", () => {
+  test("renders error message if fetch fails", async () => {
     // mock fetch with error response
     jest.spyOn(global, "fetch").mockImplementationOnce(() => {
       return Promise.reject(new Error("fetch failed"));
@@ -25,6 +16,7 @@ describe("posts components", () => {
 
     render(<Posts />);
 
+    expect(screen.getByRole("img", { name: /loading/i })).toBeInTheDocument();
     expect(fetch).toHaveBeenCalledWith("https://www.reddit.com/.json");
     expect(await screen.findByText(/something went wrong/i)).toBeInTheDocument();
 
@@ -37,6 +29,7 @@ describe("posts components", () => {
   test("renders posts correctly", async () => {
     render(<Posts />);
 
+    expect(screen.getByRole("img", { name: /loading/i })).toBeInTheDocument();
     // Post one (image)
     expect(await screen.findByRole("heading", { name: "post one"})).toBeInTheDocument();
     expect(screen.getByText("r/subreddit one")).toBeInTheDocument();
@@ -61,7 +54,7 @@ describe("posts components", () => {
     expect(screen.getByRole("link", { name: "Comments (8.5k)" }))
     .toHaveAttribute("href", expect.stringContaining("r/subreddit-two/comments/post-two/"));
 
-    // Post three (only text)
+    // Post three (text)
     expect(screen.getByRole("heading", { name: "post three" })).toBeInTheDocument();
     expect(screen.getByText("r/subreddit three")).toBeInTheDocument();
     expect(screen.getByText("24.9k")).toBeInTheDocument();
