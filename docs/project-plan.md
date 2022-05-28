@@ -20,7 +20,7 @@ The React library will be used to write the logic of the components that make up
 
 A wireframe and CSS style specification will guide the development of the visual aspects of the UI. However, most design decisions are intended to take place as the application takes shape, since this project is for educational purposes only and does not need to follow any specific design rules. The idea is to build a simple and elegant UI, with flat design and soft colors. Using CSS Grid and media queries, the application will be responsive and display appropriately on either desktop, tablets or smartphones.
 
-Unit and integration tests will be written with Jest and React Testing Library.
+Unit and integration tests will be written with Jest and React Testing Library following [Kent C. Dodds's guidelines](https://kentcdodds.com/blog/write-tests) on tests, focusing less on implementation details and more on integration tests that represent the way a user would interact with the application.
 
 ## Development Methodology 
 
