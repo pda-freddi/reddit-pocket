@@ -19,5 +19,11 @@ export const handlers = [
       ctx.status(200),
       ctx.json(responseData.comments)
     );
+  }),
+  rest.get("https://www.reddit.com/search.json", (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json(responseData.posts)
+    );
   })
 ];

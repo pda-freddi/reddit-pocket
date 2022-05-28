@@ -65,7 +65,7 @@ describe("posts feature", () => {
 
     // Link to more posts on reddit.com
     expect(screen.getByRole("link", { name: /view more posts/i }))
-    .toHaveAttribute("href", expect.stringContaining("https://www.reddit.com/"))
+    .toHaveAttribute("href", expect.stringContaining("https://www.reddit.com/"));
 
     // No error message or loading animation present
     expect(screen.queryByText(/something went wrong/i)).toBeNull();
