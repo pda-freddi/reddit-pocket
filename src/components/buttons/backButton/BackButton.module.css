@@ -2,6 +2,7 @@
   align-self: end;
   justify-self: start;
   width: 90px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -10,7 +11,8 @@
   border-radius: 5px;
   font-size: 1rem;
   font-weight: 700;
-  height: 40px;
+  color: #000000;
+  text-decoration: none;
 }
 
 .backButton:hover {
