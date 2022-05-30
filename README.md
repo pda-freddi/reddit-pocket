@@ -6,7 +6,7 @@ It's a Reddit Client built with React and Redux. [Reddit](https://www.reddit.com
 
 This application features posts and comments delivered through Reddit's JSON API. The user can browse popular subreddits and filter the content by "hot", "top voted", "rising" and "new". A search feature is also provided to find posts that match a given search term.
 
-A live demo can be found [here](www.example.com).
+A live demo can be found [here](https://redditpocket.netlify.app/).
 
 ## Technologies
 
@@ -40,12 +40,8 @@ More screenshots of [desktop](./docs/screenshots/desktop) and [mobile](./docs/sc
 
 ## Known Issues
 
-* Some text posts with tables or long links can overflow the post container and break the layout pattern. The issue has to do with the markdown rendering of the content, which is currently being handled by the "markdown-to-jsx" library.
+* Some text posts with tables or long links might overflow the post container and break the layout pattern. The issue has to do with the markdown rendering of the content, which is currently being handled by the "markdown-to-jsx" library. I chose this library because it was built specifically for React and seemed like a good solution, but it doesn't seem to support some more advanced Markdown features. I'm looking to implement an alternative library to solve this issue.
 * Audio and video fall out of sync if user clicks through the video's progress bar and audio volume cannot be controlled through video controls. This happens because Reddit's videos have their audio sent in a separate file through the API. Getting them to play simultaneously was accomplished with a simple workaround, but to get them to stay in sync is a bit more complex. I'm currently looking into alternatives to fix this issue.
-
-## Improvements
-
-* Besides fixing the known issues, I plan to add a dropdown navigation menu for the sidebar so that this feature is also available on smaller screens.
 
 ## Acknowledgements
 
