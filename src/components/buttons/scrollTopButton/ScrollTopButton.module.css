@@ -23,6 +23,12 @@
   background-color: #FFFFFF;
 }
 
+@media screen and (max-width:1200px) {
+  .scrollTopButton {
+    left: 68%;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .scrollTopButton {
     display: none;

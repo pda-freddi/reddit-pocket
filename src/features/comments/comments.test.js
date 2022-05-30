@@ -65,7 +65,7 @@ describe("comments feature", () => {
     // Third comment
     expect(screen.getByText("comment author three")).toBeInTheDocument();
     expect(screen.getByText("comment three text")).toBeInTheDocument();
-    expect(screen.getByText(/edited 1 day ago/i)).toBeInTheDocument();
+    expect(screen.getByText(/edited/i)).toBeInTheDocument();
     expect(screen.getByText("125")).toBeInTheDocument();
 
     // Link to more comments on reddit.com
