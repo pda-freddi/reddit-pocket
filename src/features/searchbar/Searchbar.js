@@ -23,7 +23,7 @@ const Searchbar = () => {
   };
 
   return (
-    <div className={styles.searchbarContainer}>
+    <form className={styles.searchbarContainer}>
       <label htmlFor="searchInput" className={styles.searchInputLabel}>
         <img 
         className={styles.searchIcon} 
@@ -43,7 +43,7 @@ const Searchbar = () => {
       {
         searchTerm ?
         <>
-        <button className={styles.searchButton} onClick={handleClick}>
+        <button className={styles.searchButton} onClick={handleClick} type="submit">
           <img src={checkIcon} alt="Submit" />
         </button>
         <button className={styles.clearButton} onClick={() => dispatch(clearSearchTerm())}>
@@ -53,7 +53,7 @@ const Searchbar = () => {
         :
         ""
       }
-    </div>
+    </form>
   );
 };
 
