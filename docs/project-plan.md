@@ -1,14 +1,14 @@
 # Reddit Pocket Project Plan
 
 ## Table of Contents
-1. [Sumary](#sumary)
+1. [Summary](#summary)
 2. [Implementation](#implementation)
 3. [Development Methodology](#development-methodology)
 4. [Wireframe](#wireframe)
 5. [React UI Components Hierarchy](#react-ui-components-hierarchy)
 6. [CSS Style Guide](#css-style-guide)
 
-## Sumary
+## Summary
 
 The goal of this project is to develop a simple interactive UI for Reddit using React and Redux. 
 The external data will be fetched using the JSON Reddit API. This method does not require user authentication and provides read-only data, which simplifies the logic necessary for the fetching but limits the functionality that the application can provide. Therefore, the application will feature subreddit browsing 
