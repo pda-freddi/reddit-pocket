@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fe696bd0-cf93-4a24-b736-b87f3d87c824/deploy-status)](https://app.netlify.com/sites/redditpocket/deploys)
+
 # Reddit Pocket
 
 This project was built for Codecademy's Full Stack Engineering Path.
