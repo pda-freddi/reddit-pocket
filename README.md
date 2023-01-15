@@ -2,9 +2,7 @@
 
 # Reddit Pocket
 
-This project was built for Codecademy's Full Stack Engineering Path.
-
-It's a Reddit Client built with React and Redux. [Reddit](https://www.reddit.com/) is a network of communities where people can dive into their interests, hobbies and passions.
+This project consists of a Reddit Client built with React and Redux. [Reddit](https://www.reddit.com/) is a network of communities where people can dive into their interests, hobbies and passions.
 
 This application features posts and comments delivered through Reddit's JSON API. The user can browse popular subreddits and filter the content by "hot", "top voted", "rising" and "new". A search feature is also provided to find posts that match a given search term.
 
